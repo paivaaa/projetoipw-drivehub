@@ -1,0 +1,170 @@
+/* Formulário */
+.car-form-container {
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 100%;
+}
+
+.car-form {
+  width: 1000px;
+  padding: 20px;
+}
+
+.linha-form {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.linha-form select,
+.linha-form input {
+  flex: 1;
+  height: 45px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.linha-form input::placeholder {
+  color: black;
+}
+
+.linha-form .pesquisa-numanuncios,
+.linha-form button {
+  flex: 1;
+  height: 45px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.linha-form button {
+  background-color: #d02c14;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.pesquisa-numanuncios {
+  display: flex;
+}
+
+.pesquisa-numanuncios p {
+  margin-left: 10px;
+}
+
+/* Carros resultados */
+.carros-container {
+  display: flex;
+  width: auto;
+  padding: 50px;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.carros-resultados {
+  width: auto;
+}
+
+.carros-container h1 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Estilação das box dos carros*/
+.carro {
+  display: flex;
+  margin-top: 25px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.carro-img {
+  width: 250px;
+  height: 150px;
+  padding: 20px;
+  display: flex;
+}
+
+.carro-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.carro-txt {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.carro-txt h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.txt-detalhes {
+  display: flex;
+  margin-top: 10px;
+  gap: 15px;
+}
+
+.txt-linha {
+  display: flex;
+  gap: 15px;
+}
+
+.txt-linha img {
+  width: 20px;
+  height: 20px;
+}
+
+.preco {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 25px;
+  color: #b40404;
+  margin-left: auto;
+}
+
+.preco span {
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 850px) {
+  .carro {
+    flex-direction: column;
+  }
+
+  .carro-img {
+    width: auto;
+    height: auto;
+  }
+
+  .txt-detalhes {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .carro {
+    flex-direction: column;
+  }
+
+  .carro-img {
+    width: auto;
+  }
+
+  .txt-detalhes {
+    flex-direction: column;
+  }
+}

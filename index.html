@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mainpage.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo"><a href="index.html">DRIVE<span>HUB</span></a></h1>
+        <nav>
+            <ul class="nav-list">
+                <li id="esconderNav"><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li id="esconderNav"><a href="carros-novos.html">Carros Novos</a></li>
+                <li id="esconderNav"><a href="financimento.html">Financiamento</a></li>
+                <li class="btnMenu"><a href="#"><img src="assets/menu.svg" alt="menu"></a></li>
+            </ul>
+        </nav>
+        <a id="esconderNav" class="btn-vender-link" href="vender-carro/vender-carro.html"><button
+                class="btn-vender"><img src="/assets/plusvenda.svg">Comece a Vender</button></a>
+        <nav class="responsive-nav">
+            <ul class="responsive-nav-list">
+                <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li><a href="carros-novos.html">Carros Novos</a></li>
+                <li><a href="financimento.html">Financiamento</a></li>
+                <li><a href="vender-carro/vender-carro.html">Vender carro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="car-form-container">
+            <form class="car-form" id="searchForm">
+                <div class="form-linha">
+                    <select id="marca" name="marca">
+                        <option value="">Marca</option>
+                        <option value="Aston Martin">Aston Martin</option>
+                        <option value="Audi">Audi</option>
+                        <option value="Bentley">Bentley</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Citroën">Citroën</option>
+                        <option value="Dacia">Dacia</option>
+                        <option value="Ferrari">Ferrari</option>
+                        <option value="Fiat">Fiat</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="Kia">Kia</option>
+                        <option value="Lexus">Lexus</option>
+                        <option value="Maserati">Maserati</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="McLaren">McLaren</option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Opel">Opel</option>
+                        <option value="Peugeot">Peugeot</option>
+                        <option value="Porsche">Porsche</option>
+                        <option value="Renault">Renault</option>
+                        <option value="Seat">Seat</option>
+                        <option value="Skoda">Skoda</option>
+                        <option value="Smart">Smart</option>
+                        <option value="Tesla">Tesla</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Volvo">Volvo</option>
+                    </select>
+                    <input type="text" id="modelo" name="modelo" placeholder="Modelo">
+                </div>
+                <div class="form-linha">
+                    <input type="number" id="preco" name="preco" step="0.01" placeholder="Preço Máximo">
+                    <input type="number" id="ano" name="ano" placeholder="Ano de">
+                </div>
+                <div class="form-linha">
+                    <select name="combustivel" id="combustivel">
+                        <option value="">Combustível</option>
+                        <option value="Gasolina">Gasolina</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Elétrico">Elétrico</option>
+                    </select>
+                    <select name="segmento" id="segmento">
+                        <option value="">Segmento</option>
+                        <option value="Cabrio">Cabrio</option>
+                        <option value="Carrinha">Carrinha</option>
+                        <option value="Coupé">Coupé</option>
+                        <option value="Hatchback">Hatchback</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                    </select>
+                </div>
+                <div class="form-linha">
+                    <div class="pesquisa-numanuncios">
+                        <img src="assets/anuncio.svg" alt="">
+                        <p class="numAnuncio"></p>
+                    </div>
+                    <button type="submit">Pesquisar</button>
+                </div>
+            </form>
+        </section>
+        <section id="anuncio">
+            <h2 class="anuncio-h2">Anúncios em destaque</h2>
+            <div id="anuncio-box"></div>
+            <!-- Anúncios de carros serão exibidos aqui -->
+        </section>
+        <section class="section-links">
+            <h2>Marcas de carros mais populares:</h2>
+            <ul>
+                <li><a href="#" class="marca-link" data-marca="BMW">BMW</a></li>
+                <li><a href="#" class="marca-link" data-marca="Mercedes">Mercedes</a></li>
+                <li><a href="#" class="marca-link" data-marca="Audi">Audi</a></li>
+                <li><a href="#" class="marca-link" data-marca="Peugeot">Peugeot</a></li>
+                <li><a href="#" class="marca-link" data-marca="Tesla">Tesla</a></li>
+                <li><a href="#" class="marca-link" data-marca="Toyota">Toyota</a></li>
+                <li><a href="#" class="marca-link" data-marca="Ford">Ford</a></li>
+            </ul>
+            <h2>Modelos de carros mais populares:</h2>
+            <ul>
+                <li><a href="#" class="modelo-link" data-modelo="3008">Peugeot 3008</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="C3">Citroën C3</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="A3">Audi A3</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="Golf">Volkswagen Golf</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="Qashqai">Nissan Qashqai</a></li>
+            </ul>
+            <h2>Carros BMW mais populares:</h2>
+            <ul>
+                <li><a href="#" class="modelo-link" data-modelo="320">BMW 320</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="Série 3">BMW Série 3</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="Série 5">BMW Série 5</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="X1">BMW X1</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="X3">BMW X3</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="X5">BMW X5</a></li>
+            </ul>
+            <h2>Carros Audi mais populares:</h2>
+            <ul>
+                <li><a href="#" class="modelo-link" data-modelo="A3">Audi A3</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="TT">Audi TT</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="Q5">Audi Q5</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="A1">Audi A1</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="R8">Audi R8</a></li>
+                <li><a href="#" class="modelo-link" data-modelo="A6">Audi A6</a></li>
+            </ul>
+        </section>
+        <script src="js/anunciosdestaque.js"></script>
+        <script src="js/pesquisar-carros.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelectorAll(".marca-link").forEach(link => {
+                    link.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        const marca = this.getAttribute("data-marca");
+                        window.location.href = `carros-populares.html?marca=${encodeURIComponent(marca)}`;
+                    });
+                });
+
+                document.querySelectorAll(".modelo-link").forEach(link => {
+                    link.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        const modelo = this.getAttribute("data-modelo");
+                        window.location.href = `carros-populares.html?modelo=${encodeURIComponent(modelo)}`;
+                    });
+                });
+            });
+
+            let btnMenu = document.querySelector('.btnMenu');
+            let navbar = document.querySelector('.responsive-nav-list');
+
+            btnMenu.addEventListener('click', () => {
+                if (navbar.style.display === 'flex') {
+                    navbar.style.display = 'none';
+                } else {
+                    navbar.style.display = 'flex';
+                }
+            });
+
+            document.querySelector('.responsive-nav-list li').addEventListener('click', () => {
+                navbar.style.display = 'none';
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 850) {
+                    navbar.style.display = 'none';
+                }
+            });
+        </script>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>A DriveHub é a sua plataforma de confiança para comprar e vender carros. Oferecemos uma vasta gama de
+                    carros novos e usados com as melhores ofertas de financiamento.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                    <li><a href="carros-novos.html">Carros Novos</a></li>
+                    <li><a href="financiamento.html">Financiamento</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <ul class="social-media">
+                    <li><a href="https://facebook.com"><img src="assets/facebook-icon.svg" alt="Facebook">Facebook</a>
+                    </li>
+                    <li><a href="https://twitter.com"><img src="assets/twitter-icon.svg" alt="Twitter">Twitter</a></li>
+                    <li><a href="https://www.instagram.com"><img src="assets/instagram-icon.svg"
+                                alt="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DriveHub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

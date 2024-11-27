@@ -1,0 +1,197 @@
+.carro-segmentos{
+    padding: 30px;
+    background-color: #d3d3d3;
+}
+
+.segmento-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.segmento{
+    padding: 20px;
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+}
+
+.segmento img{
+    background-color: white;
+    
+}
+
+.segmento h2{
+    font-size: 20px;
+    text-align: center;
+}
+
+.carronovo-info{
+    padding: 30px;
+}
+
+.carronovo-info p{
+    padding: 15px;    
+}
+
+/* Section Carros mais procurados*/
+.carrosmaisprocurados-container{
+    padding: 30px;
+}
+
+.segmentoprocurado-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.segmentoprocurado{
+    padding: 15px;
+    text-align: center;
+}
+
+.carrosprocurados-container{
+    display: flex;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+.carroprocurado{
+    padding: 5px;
+}
+
+.vs{
+    margin-top: 25%;
+}
+
+.carroprocurado p{
+    color: grey;
+}
+
+.carroprocurado img{
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 175px;
+    height: 115px;
+}
+
+/* Carros resultados */
+.carros-container{
+    display: flex;
+    width: auto;
+    padding: 50px;
+    flex-direction: column;
+    align-items: center; 
+    margin: 0 auto; 
+}
+
+.carros-container h1{
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.carro{
+    display: flex;
+    margin-top: 25px;
+    border: 1px solid #ccc;
+    width: 100%; 
+    max-width: 1000px; 
+}
+
+.carro-img {
+    width: 250px; 
+    height: 150px;
+    padding: 20px;
+    display: flex;
+}
+
+.carro-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     
+    border-radius: 5px;
+}
+
+.carro-txt{
+    padding: 20px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.carro-txt h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.txt-detalhes{
+    display: flex;
+    margin-top: 10px;
+    gap: 15px;
+}
+
+.txt-linha{
+    display: flex;
+    gap: 15px;
+}
+
+.txt-linha img{
+    width: 20px;
+    height: 20px;
+}
+
+.preco {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #B40404;
+    margin-left: auto; 
+}
+
+.preco span{
+    font-size: 20px;
+}
+
+
+@media only screen and (max-width: 850px) {
+    .carro{
+        flex-direction: column;
+        
+    }
+    .txt-detalhes{
+        flex-direction: column;
+    }
+    .carro-img{
+        width: auto;
+        height: auto;
+    }
+    .segmento-container {
+        flex-direction: column;
+    }
+    .carro-segmentos h1{
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .carrosmaisprocurados-container h2 {
+        text-align: center;
+    }
+    .segmentoprocurado-container{
+        flex-direction: column;
+    }
+    .carrosprocurados-container{
+        flex-direction: column;
+    }
+    .segmento img {
+        width: 100%;
+    }
+    
+    }
+
+

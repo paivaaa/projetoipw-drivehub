@@ -1,0 +1,218 @@
+/* Estilização da form*/
+.car-form-container {
+  background-image: url(/img/backgroundform.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  height: 500px;
+}
+
+.car-form {
+  padding: 20px;
+  margin: 75px 0 0 100px;
+  height: 300px;
+  width: 100%;
+  max-width: 600px;
+  background-color: #f0ecec;
+  border-radius: 5px;
+}
+
+.linha-checkbox {
+  display: flex;
+  height: 40px;
+  margin-top: 30px;
+  gap: 5px;
+}
+
+.linha-checkbox label {
+  height: 50px;
+  flex-grow: 1;
+  width: calc(50% - 7.5px);
+  font-size: 20px;
+  border: none;
+  color: black;
+}
+
+input[type="checkbox"] {
+  width: 45px;
+  height: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("/assets/checkbox.svg");
+}
+
+input[type="checkbox"]:checked {
+  background-image: url("/assets/checkbox-marked.svg");
+}
+
+.linha-form {
+  display: flex;
+  height: 40px;
+  margin-top: 30px;
+}
+
+.linha-form select,
+.linha-form input[type="text"] {
+  height: 50px;
+  flex-grow: 1;
+  width: calc(50% - 7.5px);
+  font-size: 20px;
+  border: none;
+  color: black;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.linha-form select {
+  margin-right: 20px;
+  height: 50px;
+}
+
+.linha-form ::placeholder {
+  color: black;
+  padding: 5px;
+}
+
+.btn-form {
+  margin-top: 40px;
+}
+
+.btn-pesquisar {
+  height: 50px;
+  width: 100%;
+  background-color: #d02c14;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Estilização da section Artigos Populares*/
+.artigos-populares {
+  padding: 50px;
+  justify-content: center;
+}
+
+.artigos-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  justify-content: center;
+  gap: 40px;
+}
+
+.artigo {
+  display: flex;
+  border: 1px solid #ccc;
+  width: 350px;
+  height: 450px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.artigo-texto h3 {
+  margin-top: 0px;
+}
+
+/* Estilização da section Perguntas Frequentes*/
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 1rem;
+  details {
+    font-size: 1rem;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 0.5rem;
+    position: relative;
+
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+}
+
+details:hover {
+    border: 1px solid #ccc;
+}
+
+  summary {
+    user-select: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    list-style: none;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  summary:hover .faq-pergunta {
+    opacity: 1;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:focus {
+    outline: none;
+  }
+
+  summary:hover .expand-icon {
+    opacity: 1;
+  }
+
+  .faq-pergunta {
+    margin-left: 40px;
+    width: 90%;
+    opacity: 0.65;
+    transition: all 250ms ease-in-out;
+  }
+
+  .faq-resposta {
+    padding: 0.2rem 1rem 1rem 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .expand-icon {
+    opacity: 0.65;
+  }
+
+  .expand-icon {
+    pointer-events: none;
+    position: absolute;
+    transition: all 150ms ease-out;
+  }
+
+}
+
+  @media only screen and (max-width: 850px) {
+   
+    .artigos-container {
+      display: flex;
+      margin-top: 15px;
+      justify-content: center;
+      gap: 40px;
+      flex-direction: column;
+  }
+
+  .car-form {
+    display: flex;
+    margin: 40px 40px 40px 40px;
+    width: 100%;
+    max-width: 600px;
+    background-color: #f0ecec;
+    border-radius: 5px;
+    flex-direction: column;
+  }
+
+  .artigo {
+    width: 100%;
+  }
+
+
+}

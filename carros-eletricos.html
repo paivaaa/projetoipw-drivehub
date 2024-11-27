@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carros-eletricos.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo"><a href="index.html">DRIVE<span>HUB</span></a></h1>
+        <nav>
+            <ul class="nav-list">
+                <li id="esconderNav"><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li id="esconderNav"><a href="carros-novos.html">Carros Novos</a></li>
+                <li id="esconderNav"><a href="financimento.html">Financiamento</a></li>
+                <li class="btnMenu"><a href="#"><img src="assets/menu.svg" alt="menu"></a></li>
+            </ul>
+        </nav>
+        <a id="esconderNav" class="btn-vender-link" href="vender-carro/vender-carro.html"><button
+                class="btn-vender"><img src="/assets/plusvenda.svg">Comece a Vender</button></a>
+        <nav class="responsive-nav">
+            <ul class="responsive-nav-list">
+                <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li><a href="carros-novos.html">Carros Novos</a></li>
+                <li><a href="financimento.html">Financiamento</a></li>
+                <li><a href="vender-carro/vender-carro.html">Vender carro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="car-form-container">
+            <form class="car-form" id="searchForm">
+                <h2>Pesquisar Carros Elétricos e Híbridos</h2>
+                <div class="linha-checkbox">
+                    <input type="checkbox" id="carros_novos" name="carros_novos" value="novos">
+                    <label for="carros_novos">Carros Novos</label>
+                    <input type="checkbox" id="carros_usados" name="carros_usados" value="usados">
+                    <label for="carros_usados">Carros Usados</label>
+                </div>
+                <div class="linha-form">
+                    <select id="marca" name="marca">
+                        <option value="">Marca</option>
+                        <option value="Aston Martin">Aston Martin</option>
+                        <option value="Audi">Audi</option>
+                        <option value="Bentley">Bentley</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Citroën">Citroën</option>
+                        <option value="Ferrari">Ferrari</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Jaguar">Jaguar</option>
+                        <option value="Jeep">Jeep</option>
+                        <option value="Kia">Kia</option>
+                        <option value="Lexus">Lexus</option>
+                        <option value="Maserati">Maserati</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="McLaren">McLaren</option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Opel">Opel</option>
+                        <option value="Peugeot">Peugeot</option>
+                        <option value="Porsche">Porsche</option>
+                        <option value="Rolls-Royce">Rolls-Royce</option>
+                        <option value="Tesla">Tesla</option>
+                    </select>
+                    <input type="text" id="modelo" name="modelo" placeholder="Modelo">
+                </div>
+                <div class="btn-form">
+                    <button class="btn-pesquisar" type="submit">Pesquisar</button>
+                </div>
+            </form>
+        </section>
+        <section class="artigos-populares">
+            <h2>Artigos Populares</h2>
+            <div class="artigos-container">
+                <div class="artigo">
+                    <img class="img-artigo" src="img/bateriaeletrico.jpg" alt="bateria-eletrico" >
+                    <div class="artigo-texto">
+                        <h3>Como manter as baterias dos carros elétricos?</h3>
+                        <p>Para manter as baterias dos carros elétricos, evite descargas completas, carregue entre
+                            20-80%, use carregadores recomendados, evite calor extremo e faça manutenção regular.</p>
+                    </div>
+                    <a href="">Ler o artigo</a>
+                </div>
+                <div class="artigo">
+                    <img class="img-artigo" src="img/carregamentoeletrico.jpg" alt="carregamento-eletrico" >
+                    <div class="artigo-texto">
+                        <h3>Carros elétricos: conheça os incentivos fiscais para 2024?</h3>
+                        <p>Se comprou, ou está nos seus planos comprar um carro elétrico em 2023, saiba que existem
+                            vários incentivos dos quais pode usufruir.</p>
+                    </div>
+                    <a href="">Ler o artigo</a>
+                </div>
+                <div class="artigo">
+                    <img class="img-artigo" src="img/motoreletrico.jpg" alt="motor-eletrico" >
+                    <div class="artigo-texto">
+                        <h3>Carros elétricos: como saber se as baterias estão boas</h3>
+                        <p>Para saber se as baterias dos carros elétricos estão boas, verifique a autonomia, a
+                            capacidade de carga, a saúde da bateria via software e faça inspeções regulares.</p>
+                    </div>
+                    <a href="">Ler o artigo</a>
+                </div>
+            </div>
+        </section>
+        <section class="faq-container">
+            <h2>Perguntas Frequentes</h2>
+            <details>
+                <summary>
+                    <img src="assets/plus.svg" class="expand-icon" alt="Plus">
+                    <span class="faq-pergunta">
+                        Quanto tempo duram as baterias?
+                    </span>
+                </summary>
+                <div class="faq-resposta">
+                    As baterias dos carros elétricos têm uma vida útil estimada de 30 anos, segundo dados da UVE, sendo
+                    que destes 30 anos, pelo menos 15 serão passados a alimentar o motor de um carro elétrico.
+                    Depois desses 15 anos, estas baterias podem ser reutilizadas noutras funções como por exemplo
+                    armazenar energia elétrica em habitações, empresas ou edifícios públicos, antes de, por fim, e no
+                    último ciclo, serem recicladas.
+                    As baterias dos carros elétricos, como são feitas a partir de iões de lítio, podem ser recicladas
+                    quase na sua totalidade. Ou seja, para além de durarem praticamente toda a vida útil do automóvel, e
+                    ao contrário do que se pensa, não são prejudiciais para o ambiente, e têm quase sempre uma 2ª vida.
+
+                    Mas… e se porventura, as baterias avariarem antes dos 15 anos?
+                    Efetivamente pode acontecer… Os carros não são máquinas perfeitas, independentemente de serem a
+                    combustão ou elétricos.
+                    Mas os carros elétricos já estão desenvolvidos a tal ponto que a confiança das marcas nesta
+                    tecnologia é total, tanto que, a garantia destes automóveis é por norma sempre superior à garantia
+                    de um modelo equivalente a combustão.
+                    A grande generalidade das marcas oferece garantias de 7, 8 ou até 10 anos nos modelos eletrificados.
+                </div>
+            </details>
+            <details>
+                <summary>
+                    <span class="faq-pergunta">
+                        Como manter as baterias dos carros elétricos
+                    </span>
+                    <img src="assets/plus.svg" class="expand-icon" alt="Plus">
+                </summary>
+                <div class="faq-resposta">
+                    No caso das baterias de iões de lítio, que são as mais comuns atualmente, existem algumas boas
+                    práticas para assegurar a sua longevidade. Sendo assim, é aconselhável nunca deixar que as baterias
+                    descarreguem completamente, mantendo a sua carga entre os 20% e os 80%.
+                    Isto porque o carregamento gera calor e quanto mais tempo a bateria estiver ligada, maiores serão os
+                    possíveis danos. Ou seja, se não precisar do carro com autonomia máxima no dia seguinte, ou se o vai
+                    deixar uns dias parado, evite carregar a bateria até aos 100%.
+                </div>
+            </details>
+            <details>
+                <summary>
+                    <span class="faq-pergunta">Qual a autonomia real de um carro elétrico?</span>
+                    <img src="assets/plus.svg" class="expand-icon" alt="Plus">
+                </summary>
+                <div class="faq-resposta">A autonomia de um carro elétrico depende de vários fatores, onde se incluem a
+                    capacidade da bateria (medida em kWh), a aerodinâmica do veículo, o estilo de condução, o tipo de
+                    utilização (cidade ou autoestrada), a eficiência da bateria e a temperatura exterior.
+                    Para condutores que fazem 50 quilómetros diários nas deslocações para o trabalho ou dentro da
+                    cidade, a autonomia oferecida por um citadino é suficiente para alguns dias de utilização sem ser
+                    necessário ligar o carro à corrente elétrica.</div>
+            </details>
+            <details>
+                <summary>
+                    <span class="faq-pergunta">Qual a potência necessária para carregar um carro elétrico?</span>
+                    <img src="assets/plus.svg" class="expand-icon" alt="Plus">
+                </summary>
+                <div class="faq-resposta">Para saber qual a potência contratada a escolher, tem de verificar qual a
+                    potência da Wallbox que pretende instalar e optar por uma superior. E, muito importante: para
+                    proceder à instalação de um carregador de 11 kW ou 22 kW, o contador de energia em sua casa já deve
+                    ser trifásico e também com uma potência superior à do carregador.
+                    Ou seja, se escolheu instalar em casa uma Wallbox de 3,7 kW, a potência contratada terá de ser de
+                    4,6 kVA/5,75 kVA no mínimo. Já para a Wallbox de 7,4 kW, a potência contratada deverá ser de 10,35
+                    kVA monofásico. As Wallbox de 11 kW e 22 kW, obrigam a contratar potências de 13,8 e 27,60 kVA
+                    trifásico. Tire todas as dúvidas</div>
+            </details>
+            <details>
+                <summary>
+                    <span class="faq-pergunta">Benefícios fiscais para carros elétricos em 2022</span>
+                    <img src="assets/plus.svg" class="expand-icon" alt="Plus">
+                </summary>
+                <div class="faq-resposta"> Se está nos seus planos comprar um carro elétrico este ano, saiba que pode
+                    candidatar-se ao incentivo do Estado no valor de 4000€ até 30 de novembro de 2022.
+                    Além disso, existem ainda benefícios fiscais para particulares, como a isenção do Imposto Sobre
+                    Veículos e Imposto Único de Circulação, e para empresas, como a isenção da Tributação Autónoma e a
+                    possibilidade de deduzir o IVA.</div>
+            </details>
+        </section>
+        <script src="js/pesquisa-eletricos.js"></script>
+        <script src="js/carroseletricos.js"></script>
+        <script>
+            let btnMenu = document.querySelector('.btnMenu');
+            let navbar = document.querySelector('.responsive-nav-list');
+
+            btnMenu.addEventListener('click', () => {
+                if (navbar.style.display === 'flex') {
+                    navbar.style.display = 'none';
+                } else {
+                    navbar.style.display = 'flex';
+                }
+            });
+
+            document.querySelector('.responsive-nav-list li').addEventListener('click', () => {
+                navbar.style.display = 'none';
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 850) {
+                    navbar.style.display = 'none';
+                }
+            });
+        </script>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>A DriveHub é a sua plataforma de confiança para comprar e vender carros. Oferecemos uma vasta gama de carros novos e usados com as melhores ofertas de financiamento.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                    <li><a href="carros-novos.html">Carros Novos</a></li>
+                    <li><a href="financiamento.html">Financiamento</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <ul class="social-media">
+                    <li><a href="https://facebook.com"><img src="assets/facebook-icon.svg" alt="Facebook">Facebook</a></li>
+                    <li><a href="https://twitter.com"><img src="assets/twitter-icon.svg" alt="Twitter">Twitter</a></li>
+                    <li><a href="https://www.instagram.com"><img src="assets/instagram-icon.svg" alt="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DriveHub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Carro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/anuncio.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="index.html">DRIVE<span>HUB</span></a></h1>
+        <nav>
+            <ul class="nav-list">
+                <li id="esconderNav"><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li id="esconderNav"><a href="carros-novos.html">Carros Novos</a></li>
+                <li id="esconderNav"><a href="financimento.html">Financiamento</a></li>
+                <li class="btnMenu"><a href="#"><img src="assets/menu.svg" alt="menu"></a></li>
+            </ul>
+        </nav>
+        <a id="esconderNav" class="btn-vender-link" href="vender-carro/vender-carro.html"><button
+                class="btn-vender"><img src="/assets/plusvenda.svg">Comece a Vender</button></a>
+        <nav class="responsive-nav">
+            <ul class="responsive-nav-list">
+                <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li><a href="carros-novos.html">Carros Novos</a></li>
+                <li><a href="financimento.html">Financiamento</a></li>
+                <li><a href="vender-carro/vender-carro.html">Vender carro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="voltar-link">
+        
+    </div>
+    <section id="main-carro">
+        <!-- Detalhes do carro serão exibidos aqui -->
+    </section>
+    <section id="detalhes-carro">
+        <div id="detalhes-box"></div>
+        <!-- Detalhes do carro serão exibidos aqui -->
+    </section>    
+    <section id="anuncio">
+        <h2 class="anuncio-h2">Anúncios em destaque</h2>
+        <div id="anuncio-box"></div>
+        <!-- Anúncios de carros serão exibidos aqui -->
+    </section>
+    <script src="js/anuncio.js"></script>
+    <script src="js/anunciosdestaque.js"></script>
+    <script>
+        let btnMenu = document.querySelector('.btnMenu');
+            let navbar = document.querySelector('.responsive-nav-list');
+
+            btnMenu.addEventListener('click', () => {
+                if (navbar.style.display === 'flex') {
+                    navbar.style.display = 'none';
+                } else {
+                    navbar.style.display = 'flex';
+                }
+            });
+
+            document.querySelector('.responsive-nav-list li').addEventListener('click', () => {
+                navbar.style.display = 'none';
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 850) {
+                    navbar.style.display = 'none';
+                }
+            });
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>A DriveHub é a sua plataforma de confiança para comprar e vender carros. Oferecemos uma vasta gama de carros novos e usados com as melhores ofertas de financiamento.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                    <li><a href="carros-novos.html">Carros Novos</a></li>
+                    <li><a href="financiamento.html">Financiamento</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <ul class="social-media">
+                    <li><a href="https://facebook.com"><img src="assets/facebook-icon.svg" alt="Facebook">Facebook</a></li>
+                    <li><a href="https://twitter.com"><img src="assets/twitter-icon.svg" alt="Twitter">Twitter</a></li>
+                    <li><a href="https://www.instagram.com"><img src="assets/instagram-icon.svg" alt="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DriveHub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

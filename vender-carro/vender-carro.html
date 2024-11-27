@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveHub</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/vender-carro.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="/index.html">DRIVE<span>HUB</span></a></h1>
+        <nav>
+            <ul class="nav-list">
+                <li id="esconderNav"><a href="/carros-eletricos.html">Carros Elétricos</a></li>
+                <li id="esconderNav"><a href="/carros-novos.html">Carros Novos</a></li>
+                <li id="esconderNav"><a href="/financimento.html">Financiamento</a></li>
+                <li class="btnMenu"><a href="#"><img src="/assets/menu.svg" alt="menu"></a></li>
+            </ul>
+        </nav>
+        <a id="esconderNav" class="btn-vender-link" href="vender-carro/vender-carro.html"><button
+                class="btn-vender"><img src="/assets/plusvenda.svg">Comece a Vender</button></a>
+        <nav class="responsive-nav">
+            <ul class="responsive-nav-list">
+                <li><a href="/carros-eletricos.html">Carros Elétricos</a></li>
+                <li><a href="/carros-novos.html">Carros Novos</a></li>
+                <li><a href="/financimento.html">Financiamento</a></li>
+                <li><a href="/vender-carro/vender-carro.html">Vender carro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="form-container">
+            <h1>Criar anúncio</h1>
+            <form id="carForm" action="vender-carro.php" method="POST" enctype="multipart/form-data">
+                <div class="form-detalhescarro">
+                    <h2>Detalhes do veículo</h2>
+                    <div class="linha-form">
+                        <input type="text" id="marca" name="marca" placeholder="Marca" required>
+                        <input type="text" id="modelo" name="modelo" placeholder="Modelo" required>
+                    </div>
+                    <div class="linha-form2">
+                        <input type="text" id="submodelo" name="submodelo" placeholder="Sub-Modelo">  
+                    </div>
+                </div>
+                <div class="form-fichatecnica">
+                    <h2>Detalhes técnicos</h2>
+                    <div class="linha-form">
+                        <input type="number" id="ano" name="ano" placeholder="Ano" required>
+
+                        <input type="number" id="km" name="km" placeholder="Quilometragem" required>
+                    </div>
+                    <div class="linha-form">
+                        <select name="combustivel" id="combustivel">
+                            <option value="">Combustível</option>
+                            <option value="Gasolina">Gasolina</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Elétrico">Elétrico</option>
+                        </select>
+                        <input type="number" id="potencia" name="potencia" placeholder="Potência">
+                    </div>
+                    <div class="linha-form">
+                        <input type="text" id="segmento" name="segmento" placeholder="Segmento" required> 
+                        <select name="caixa" id="caixa">
+                            <option value="">Caixa</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Semiautomatica">Semi-automática</option>
+                            <option value="Automatica">Automática</option>
+                        </select> 
+                    </div>
+                    <div class="linha-form">
+                        <input type="number" id="portas" name="portas" placeholder="Nº de Portas" required>
+        
+                        <input type="text" id="cor" name="cor" placeholder="Cor" required>
+                    </div>
+            <div class="form-img">
+                <h2>Fotos</h2>
+                <!--<input type="file" id="imagens" name="imagens[]" multiple>-->
+                <label for="file-upload" class="custom-file-upload">
+                    Adicionar fotos
+                </label>
+            </div>
+            <div class="form-precocarro">
+                <h2>Preço</h2>
+                <div class="linha-form">
+                    <label for="preco">Preço</label>
+                </div>
+                <input type="number" id="preco" name="preco" placeholder="ex: 8000" required>   
+            </div>
+            <div class="form-dadosvendedor">
+                <h2>Detalhes do vendedor</h2>
+                <div class="linha-form">
+                    <label for="vendedor">Nome</label>
+                    <label for="telefone">Número de telefone</label>
+                </div>
+                <div class="linha-form">
+                    <input type="text" id="vendedor" name="vendedor" required>
+                    <input type="number" id="telefone" name="telefone" placeholder="Número de telefone" required>
+                </div>
+            </div>
+            <div class="linha-form">
+                <button type="submit" value="Vender Carro">Vender Carro</button>
+            </div>    
+            </form>        
+        </section>
+        <script src="vender-carro.js"></script>
+        <script>
+            let btnMenu = document.querySelector('.btnMenu');
+            let navbar = document.querySelector('.responsive-nav-list');
+
+            btnMenu.addEventListener('click', () => {
+                if (navbar.style.display === 'flex') {
+                    navbar.style.display = 'none';
+                } else {
+                    navbar.style.display = 'flex';
+                }
+            });
+
+            document.querySelector('.responsive-nav-list li').addEventListener('click', () => {
+                navbar.style.display = 'none';
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 850) {
+                    navbar.style.display = 'none';
+                }
+            });
+        </script>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>A DriveHub é a sua plataforma de confiança para comprar e vender carros. Oferecemos uma vasta gama de carros novos e usados com as melhores ofertas de financiamento.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                    <li><a href="carros-novos.html">Carros Novos</a></li>
+                    <li><a href="financiamento.html">Financiamento</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <ul class="social-media">
+                    <li><a href="https://facebook.com"><img src="/assets/facebook-icon.svg" alt="Facebook">Facebook</a></li>
+                    <li><a href="https://twitter.com"><img src="/assets/twitter-icon.svg" alt="Twitter">Twitter</a></li>
+                    <li><a href="https://www.instagram.com"><img src="/assets/instagram-icon.svg" alt="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DriveHub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

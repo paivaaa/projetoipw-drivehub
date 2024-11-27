@@ -1,0 +1,214 @@
+.car-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 550px;
+    margin-top: 50px;
+   
+}
+
+.car-form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 700px;
+}
+
+.form-linha {
+    display: flex;
+    gap: 20px; 
+    margin-top: 10px;
+}
+
+.form-linha select,
+.form-linha input {
+    flex: 1;
+    height: 45px; 
+    width: 100%; 
+    box-sizing: border-box;
+    background-color: #d3d3d3; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;  
+}
+
+.form-linha input::placeholder {
+    color:black; 
+}
+
+.form-linha .pesquisa-numanuncios,
+.form-linha button {
+    flex: 1;
+    height: 45px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.form-linha button{
+    background-color: #d02c14;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.pesquisa-numanuncios{
+    display: flex;
+}
+
+.pesquisa-numanuncios p{
+    margin-left: 10px;
+}
+
+/* Estilização dos anúncios em destaque*/
+#anuncio{
+    margin-top: 50px;
+}
+
+#anuncio-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+    flex-wrap: wrap;
+}
+
+.anuncio-h2{
+    margin-left: 50px;
+}
+
+.carro {
+    margin-top: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; 
+    height: 350px; 
+    max-width: 250px;
+    margin-bottom: 0;  
+}
+
+.carro:last-child {
+    margin-right: 0; 
+}
+
+.carro-img {
+    width: 100%; 
+}
+
+.carro-img img {
+    width: 100%; 
+    height: 170px;
+    object-fit: cover;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.carro-txt {
+    max-width: 100%; 
+    overflow: hidden; 
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.carro-txt h2 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.carro-txt p {
+    margin-top: 10px;
+}
+
+.preco {
+    padding: 10px;
+    margin-top: 10px;
+    color: #d02c14;
+    font-size: 25px;
+    font-weight: bold; 
+}
+
+/* Estilização da section links*/
+.section-links{
+    margin-top: 50px;
+}
+
+.section-links h2{
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.section-links ul {
+    display: flex;
+    list-style: none;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.section-links ul li a {
+    margin-right: 25px;
+    color: grey;
+}
+
+@media only screen and (max-width: 600px) {
+    .car-form-container {
+        padding: 20px;
+    }
+    
+    #anuncio-box {
+        flex-direction: column;
+    }
+
+    .section-links ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .car-form-container {
+        width:fit-content;
+    }
+
+    .car-form {
+        width:fit-content;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .car-form-container {
+        padding: 20px;
+    }
+
+    .car-form{
+        width: auto;
+    }
+    
+    #anuncio-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    	
+    .section-links h2 {
+        padding: 10px;
+        margin: auto;
+    }
+    .section-links ul {
+        padding: 5px;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+    }
+
+    .car-form-container {
+        width:fit-content;
+    }
+
+    .car-form {
+        width:fit-content;
+    }
+
+    .section-links h2{
+        text-align: center;
+    }
+
+}
+

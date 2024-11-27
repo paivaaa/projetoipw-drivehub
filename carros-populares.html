@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros Filtrados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carros.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo"><a href="index.html">DRIVE<span>HUB</span></a></h1>
+        <nav>
+            <ul class="nav-list">
+                <li id="esconderNav"><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li id="esconderNav"><a href="carros-novos.html">Carros Novos</a></li>
+                <li id="esconderNav"><a href="financimento.html">Financiamento</a></li>
+                <li class="btnMenu"><a href="#"><img src="assets/menu.svg" alt="menu"></a></li>
+            </ul>
+        </nav>
+        <a id="esconderNav" class="btn-vender-link" href="vender-carro/vender-carro.html"><button
+                class="btn-vender"><img src="/assets/plusvenda.svg">Comece a Vender</button></a>
+        <nav class="responsive-nav">
+            <ul class="responsive-nav-list">
+                <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li><a href="carros-novos.html">Carros Novos</a></li>
+                <li><a href="financimento.html">Financiamento</a></li>
+                <li><a href="vender-carro/vender-carro.html">Vender carro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="car-list-container" class="carros-container">
+            <div id="car-list"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>A DriveHub é a sua plataforma de confiança para comprar e vender carros. Oferecemos uma vasta gama de
+                    carros novos e usados com as melhores ofertas de financiamento.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                    <li><a href="carros-novos.html">Carros Novos</a></li>
+                    <li><a href="financiamento.html">Financiamento</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <ul class="social-media">
+                    <li><a href="https://facebook.com"><img src="assets/facebook-icon.svg" alt="Facebook">Facebook</a>
+                    </li>
+                    <li><a href="https://twitter.com"><img src="assets/twitter-icon.svg" alt="Twitter">Twitter</a></li>
+                    <li><a href="https://www.instagram.com"><img src="assets/instagram-icon.svg"
+                                alt="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DriveHub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const url = new URLSearchParams(window.location.search);
+            const marca = url.get('marca');
+            const modelo = url.get('modelo');
+
+            if (marca || modelo) {
+                fetch('data/dados_carros.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro ao carregar os dados');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        let carrosFiltrados = data;
+                        if (marca) {
+                            carrosFiltrados = carrosFiltrados.filter(car => car.marca.trim() === marca.trim());
+                        }
+                        if (modelo) {
+                            carrosFiltrados = carrosFiltrados.filter(car => car.modelo.trim() === modelo.trim());
+                        }
+                        mostrarCarros(carrosFiltrados);
+                    })
+                    .catch(error => console.error('Erro ao carregar os dados:', error));
+            }
+
+            function mostrarCarros(carros) {
+                const carList = document.getElementById('car-list');
+                carList.innerHTML = '';
+                carros.forEach(carro => {
+                    const carItem = document.createElement('div');
+                    carItem.classList.add('carro');
+                    carItem.innerHTML = `
+                    <div class="carro-img">
+                        <img src="../${carro.imgs[0]}" alt="${carro.marca} ${carro.modelo}">
+                    </div>
+                    <div class="carro-txt">
+                        <h2>${carro.marca} ${carro.modelo} ${carro.submodelo}</h2>
+                        <div class="txt-detalhes">
+                            <div class="txt-linha">
+                                <img src="/assets/fuel.svg" alt="fuel">
+                                <p>${carro.combustivel}</p>
+                            </div>
+                            <div class="txt-linha">
+                                <img src="/assets/calendar.svg" alt="calendar">
+                                <p>${carro.ano}</p>
+                            </div>
+                            <div class="txt-linha">
+                                <img src="/assets/road.svg" alt="road">
+                                <p>${carro.km} km</p>
+                            </div>
+                            <div class="txt-linha">
+                                <img src="/assets/gearshift.svg" alt="gearshift">
+                                <p>${carro.caixa}</p>
+                            </div>
+                        </div>
+                        <div class="preco"> 
+                            <p>${carro.preco} <span>EUR</span></p>
+                        </div>
+                    </div>`;
+                    carList.appendChild(carItem);
+                });
+            }
+        });
+
+        let btnMenu = document.querySelector('.btnMenu');
+        let navbar = document.querySelector('.responsive-nav-list');
+
+        btnMenu.addEventListener('click', () => {
+            if (navbar.style.display === 'flex') {
+                navbar.style.display = 'none';
+            } else {
+                navbar.style.display = 'flex';
+            }
+        });
+
+        document.querySelector('.responsive-nav-list li').addEventListener('click', () => {
+            navbar.style.display = 'none';
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 850) {
+                navbar.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

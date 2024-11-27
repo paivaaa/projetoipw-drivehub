@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/financimento.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo"><a href="index.html">DRIVE<span>HUB</span></a></h1>
+        <nav>
+            <ul class="nav-list">
+                <li id="esconderNav"><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li id="esconderNav"><a href="carros-novos.html">Carros Novos</a></li>
+                <li id="esconderNav"><a href="financimento.html">Financiamento</a></li>
+                <li class="btnMenu"><a href="#"><img src="assets/menu.svg" alt="menu"></a></li>
+            </ul>
+        </nav>
+        <a id="esconderNav" class="btn-vender-link" href="vender-carro/vender-carro.html"><button
+                class="btn-vender"><img src="/assets/plusvenda.svg">Comece a Vender</button></a>
+        <nav class="responsive-nav">
+            <ul class="responsive-nav-list">
+                <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                <li><a href="carros-novos.html">Carros Novos</a></li>
+                <li><a href="financimento.html">Financiamento</a></li>
+                <li><a href="vender-carro/vender-carro.html">Vender carro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="info-container">
+            <img src="img/financiamento.png" alt="financiamento">
+            <h2>Vantagens do Financiamento com a DriveHub</h2>
+            <ul>
+                <li><strong>Flexibilidade de pagamento</strong>: escolha a parcela que melhor se adequa ao seu
+                    orçamento.</li>
+                <li><strong>Taxas de juros competitivas</strong>: desfrute de taxas de juros mais baixas do mercado.
+                </li>
+                <li><strong>Aprovação rápida</strong>: obtenha a aprovação do financiamento em apenas alguns minutos.
+                </li>
+                <li><strong>Suporte personalizado</strong>: nossa equipe de especialistas em financiamento está sempre
+                    disponível para ajudá-lo.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Simulação de Financiamento de Carro</h1>
+                <div id="calculatora">
+                    <label for="valorCarro">Valor do Carro</label>
+                    <input type="number" id="valorCarro">
+                    <label for="entrada">Valor de Entrada</label>
+                    <input type="number" id="entrada">
+                    <label for="anos">Duração do Financiamento (anos)</label>
+                    <input type="number" id="anos">
+                    <label for="taxaJuros">Taxa de Juros (% ao ano)</label>
+                    <input type="number" id="taxaJuros">
+                    <button onclick="calcular()">Simular</button>
+                    <div id="resultado"></div>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>A DriveHub é a sua plataforma de confiança para comprar e vender carros. Oferecemos uma vasta gama de
+                    carros novos e usados com as melhores ofertas de financiamento.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="carros-eletricos.html">Carros Elétricos</a></li>
+                    <li><a href="carros-novos.html">Carros Novos</a></li>
+                    <li><a href="financiamento.html">Financiamento</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <ul class="social-media">
+                    <li><a href="https://facebook.com"><img src="assets/facebook-icon.svg" alt="Facebook">Facebook</a>
+                    </li>
+                    <li><a href="https://twitter.com"><img src="assets/twitter-icon.svg" alt="Twitter">Twitter</a></li>
+                    <li><a href="https://www.instagram.com"><img src="assets/instagram-icon.svg"
+                                alt="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DriveHub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        let btnMenu = document.querySelector('.btnMenu');
+        let navbar = document.querySelector('.responsive-nav-list');
+
+        btnMenu.addEventListener('click', () => {
+            if (navbar.style.display === 'flex') {
+                navbar.style.display = 'none';
+            } else {
+                navbar.style.display = 'flex';
+            }
+        });
+
+        document.querySelector('.responsive-nav-list li').addEventListener('click', () => {
+            navbar.style.display = 'none';
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 850) {
+                navbar.style.display = 'none';
+            }
+        });
+
+        function calcular() {
+            let valorCarro = parseFloat(document.getElementById('valorCarro').value);
+            let entrada = parseFloat(document.getElementById('entrada').value);
+            let anos = parseInt(document.getElementById('anos').value);
+            let taxaJuros = parseFloat(document.getElementById('taxaJuros').value);
+
+            let meses = anos * 12;
+            let valorFinanciado = valorCarro - entrada;
+            let taxaJurosMensal = (taxaJuros / 100) / 12;
+            let valorTotal = valorFinanciado * Math.pow(1 + taxaJurosMensal, meses);
+            let parcelaMensal = valorTotal / meses;
+
+            let resultado = document.getElementById('resultado');
+            resultado.innerHTML = `
+        <h2>Detalhes do Financiamento:</h2>
+        <p>Valor do Carro: ${valorCarro.toFixed(2)}€</p>
+        <p>Valor de Entrada: ${entrada.toFixed(2)}€</p>
+        <p>Valor Financiado: ${valorFinanciado.toFixed(2)}€</p>
+        <p>Duração do Financiamento: ${anos} anos (${meses} meses)</p>
+        <p>Taxa de Juros: ${taxaJuros}% ao ano</p>
+        <p>Valor da Parcela: ${parcelaMensal.toFixed(2)}€</p>
+        <p>Valor Total Financiado: ${valorTotal.toFixed(2)}€</p>
+    `;
+        }
+
+
+    </script>
+</body>
+
+</html>

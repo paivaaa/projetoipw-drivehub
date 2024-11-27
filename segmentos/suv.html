@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/segmentos.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo"><a href="/index.html">DRIVE<span>HUB</span></a></h1>
+        <nav>
+            <ul class="nav-list">
+                <li id="esconderNav"><a href="/carros-eletricos.html">Carros Elétricos</a></li>
+                <li id="esconderNav"><a href="/carros-novos.html">Carros Novos</a></li>
+                <li id="esconderNav"><a href="/financimento.html">Financiamento</a></li>
+                <li class="btnMenu"><a href="#"><img src="/assets/menu.svg" alt="menu"></a></li>
+            </ul>
+        </nav>
+        <a id="esconderNav" class="btn-vender-link" href="vender-carro/vender-carro.html"><button
+                class="btn-vender"><img src="/assets/plusvenda.svg">Comece a Vender</button></a>
+        <nav class="responsive-nav">
+            <ul class="responsive-nav-list">
+                <li><a href="/carros-eletricos.html">Carros Elétricos</a></li>
+                <li><a href="/carros-novos.html">Carros Novos</a></li>
+                <li><a href="/financimento.html">Financiamento</a></li>
+                <li><a href="/vender-carro/vender-carro.html">Vender carro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="formulario">
+            <!-- Contruir um form com apenas as labels Marca + Modelo -->
+        </section>
+        <section class="carro-resultados">
+            <div id="carros-container" class="carros-container">
+                <h1>Carros SUV</h1>
+                <!-- Os carros serão carregados aqui -->
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/data/dados_carros.json')
+                .then(response => response.json())
+                .then(carros => {
+                    const segmento = 'SUV';  // Define o segmento atual
+                    const condicao = 'Novo';  // Define a condição dos carros
+                    const container = document.getElementById('carros-container');
+                    const carrosFiltrados = carros.filter(carro => carro.segmento.trim() === segmento && carro.condicao.trim() === condicao);
+                    carrosFiltrados.forEach(carro => {
+                        const carroDiv = document.createElement('div');
+                        carroDiv.classList.add('carro');
+                        carroDiv.innerHTML = `
+                    <div class="carro-img">
+                        <img src="../${carro.imgs[0]}" alt="${carro.marca} ${carro.modelo}">
+                    </div>
+                    <div class="carro-txt">
+                        <h2>${carro.marca} ${carro.modelo}</h2>
+                        <div class="txt-detalhes">
+                            <div class="txt-linha">
+                                <img src="/assets/fuel.svg" alt="fuel">
+                                <p>${carro.combustivel}</p>
+                            </div>
+                            <div class="txt-linha">
+                                <img src="/assets/calendar.svg" alt="calendar">
+                                <p>${carro.ano}</p>
+                            </div>
+                            <div class="txt-linha">
+                                <img src="/assets/road.svg" alt="road">
+                                <p>${carro.km} km</p>
+                            </div>
+                            <div class="txt-linha">
+                                <img src="/assets/gearshift.svg" alt="gearshift">
+                                <p>${carro.caixa}</p>
+                            </div>
+                        </div>
+                            <div class="preco"> 
+                                <p>${carro.preco} <span>EUR</span></p>
+                            </div>
+                    </div>`;
+
+                        carroDiv.addEventListener('click', function () {
+                            redirectToAnuncio(carro);
+                        });
+
+                        container.appendChild(carroDiv);
+                    });
+                })
+                .catch(error => console.error('Erro ao carregar o JSON:', error));
+        });
+
+        // Função para redirecionar para anuncio.html com os detalhes do carro
+        function redirectToAnuncio(carro) {
+            var url = new URL('/anuncio.html', window.location.origin);
+            Object.keys(carro).forEach(key => url.searchParams.append(key, carro[key]));
+            window.location.href = url;
+        }
+
+        let btnMenu = document.querySelector('.btnMenu');
+        let navbar = document.querySelector('.responsive-nav-list');
+
+        btnMenu.addEventListener('click', () => {
+            if (navbar.style.display === 'flex') {
+                navbar.style.display = 'none';
+            } else {
+                navbar.style.display = 'flex';
+            }
+        });
+
+        document.querySelector('.responsive-nav-list li').addEventListener('click', () => {
+            navbar.style.display = 'none';
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 850) {
+                navbar.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

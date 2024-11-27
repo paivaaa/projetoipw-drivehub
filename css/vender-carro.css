@@ -1,0 +1,119 @@
+.form-container h1 {
+    font-size: 45px;
+    padding: 20px;
+    margin-left: 25px;
+}
+
+form {
+    padding: 50px;
+    margin: auto;
+    width: auto;
+}
+
+.form-fichatecnica {
+    margin-top: 20px;
+}
+
+.linha-form {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.linha-form2 {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.linha-form2 input {
+    height: 45px;
+    width: 48.5%;
+    box-sizing: border-box;
+    background-color: #d3d3d3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.linha-form2 input::placeholder {
+    color: black;
+}
+
+.linha-form select,
+.linha-form input {
+    flex: 1;
+    height: 45px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #d3d3d3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.linha-form label {
+    flex: 1;
+    font-size: 16px;
+}
+
+.linha-form input::placeholder {
+    color: black;
+}
+
+.form-img {
+    margin-top: 20px;
+}
+
+.form-precocarro {
+    margin-top: 20px;
+}
+
+#preco {
+    flex: 1;
+    height: 45px;
+    width: 30%;
+    box-sizing: border-box;
+    background-color: #d3d3d3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-dadosvendedor {
+    margin-top: 20px;
+}
+
+.linha-form button {
+    flex: 1;
+    margin-top: 20px;
+    height: 45px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #d02c14;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type="file"] {
+    display: none;
+  }
+  
+.custom-file-upload {
+    border: none;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #0e9cd6;
+    border-radius: 4px;
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .linha-form {
+        flex-direction: column;
+    }
+}
